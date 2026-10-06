@@ -7,7 +7,7 @@ export async function supabaseServer() {
   return createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
     cookies: {
       getAll: () => c.getAll(),
-      setAll: (list) => { try { list.forEach(({ name, value, options }) => c.set(name, value, options)); } catch { /* Server Component: lo refresca el middleware */ } },
+      setAll: (list: { name: string; value: string; options?: any }[]) => { try { list.forEach(({ name, value, options }: { name: string; value: string; options?: any }) => c.set(name, value, options)); } catch { /* Server Component: lo refresca el middleware */ } },
     },
   });
 }
