@@ -2,11 +2,13 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { estadoCheckin, fechaLarga, requerirPerfil, pesosReales } from '@/lib/datos';
 import GraficoFamilia from '@/components/GraficoFamilia';
-import { invitar } from './actions';
+import { cancelarInvitacion, invitar } from './actions';
+import CopiarInvitacion from './CopiarInvitacion';
 
 export const metadata = { title: 'Familia' };
 
-export default async function Page() {
+export default async function Page({ searchParams }: { searchParams: Promise<{ msg?: string; para?: string }> }) {
+  const { msg, para } = await searchParams;
   const { sb, perfil } = await requerirPerfil();
   if (perfil.rol !== 'admin') redirect('/');
   const [{ data: us }, { data: cks }] = await Promise.all([
@@ -36,12 +38,20 @@ export default async function Page() {
                 : <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-bold">{u.auth_user_id ? 'Falta su Día 0' : 'Invitación enviada'}</span>}</div>
             {pesos.length ? <p className="pista">{pesos.at(-1)!.toFixed(1)} kg · bajó {(pesos[0] - pesos.at(-1)!).toFixed(1)} kg · próximo check-in {fechaLarga(est!.due)}</p>
               : <p className="pista">{u.email_invitacion}{!u.auth_user_id && ' · todavía no creó su cuenta'}</p>}
+            {!u.auth_user_id && !u.fecha_inicio && (
+              <div className="flex flex-wrap gap-2"><CopiarInvitacion alias={u.alias} email={u.email_invitacion} />
+                <form action={cancelarInvitacion}><input type="hidden" name="id" value={u.id} /><button className="btn-ghost !min-h-10 !px-4">Cancelar invitación</button></form></div>)}
             {u.fecha_inicio && <div className="flex gap-2"><Link className="btn-ghost !min-h-10 !px-4" href={`/?u=${u.id}`}>Progreso</Link><Link className="btn-ghost !min-h-10 !px-4" href={`/plan?u=${u.id}`}>Plan</Link></div>}
           </div>))}
       </section>
       <form action={invitar} className="card flex flex-col gap-3">
         <h2 className="text-xl font-bold">Invitar a un familiar</h2>
-        <p className="pista">Se registra con este mismo correo y entra directo a su perfil.</p>
+        {msg === 'ok' && <p className="aviso" role="status">Listo: reservamos el perfil de {para}. NutriPlot no envía el correo de invitación: toca «Copiar mensaje de invitación» en su tarjeta y envíaselo por WhatsApp. Cuando cree su cuenta con ese correo, entrará directo a su perfil.</p>}
+        {msg === 'duplicado' && <p className="error" role="alert">Ese correo ya está invitado o ya tiene perfil. No se agregó de nuevo.</p>}
+        {msg === 'invalido' && <p className="error" role="alert">Escribe un nombre y un correo válido.</p>}
+        {msg === 'error' && <p className="error" role="alert">No se pudo agregar. Inténtalo de nuevo.</p>}
+        {msg === 'cancelada' && <p className="aviso" role="status">Invitación cancelada.</p>}
+        <p className="pista">Esto solo reserva su perfil, no envía ningún correo. Después copia el mensaje de invitación y envíaselo. Ella o él crea su cuenta con este mismo correo y entra directo a su perfil.</p>
         <div className="grid gap-3 sm:grid-cols-2"><div className="campo"><label htmlFor="alias">Nombre o apodo</label><input id="alias" name="alias" required maxLength={40} /></div>
           <div className="campo"><label htmlFor="email">Correo</label><input id="email" name="email" type="email" required /></div></div>
         <button className="btn self-start">Agregar a la familia</button>
