@@ -36,8 +36,8 @@ export function PlanPDF({ alias, semana, calorias, dias }: { alias: string; sema
         <Page key={d.dia} size="A4" style={s.page} wrap>
           <Text style={s.dia}>Día {d.dia}</Text>
           {d.comidas.map((c, i) => (
-            <View key={i} style={s.card} wrap={false}>
-              <Text style={s.tipo}>{c.tipo}</Text>
+            <View key={i} style={s.card}>
+              <Text style={s.tipo} minPresenceAhead={80}>{c.tipo}</Text>
               <Text style={s.titulo}>{c.nombre}</Text>
               <Text style={s.meta}>{c.tiempo} min · {c.kcal} kcal · {c.proteina} g de proteína</Text>
               {c.foto ? <Image src={c.foto} style={s.foto} /> : null}

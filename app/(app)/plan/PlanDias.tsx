@@ -13,7 +13,9 @@ export default function PlanDias({ dias }: { dias: any[] }) {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {dias[d].comidas.map((c: any) => (
           <Link key={c.tipo} href={c.href} className="card flex flex-col gap-3 !p-0 overflow-hidden transition hover:shadow-md">
-            <img src={c.foto} alt={`Foto referencial: ${c.titulo}`} className="aspect-[3/2] w-full object-cover" />
+            {c.foto
+              ? <img src={c.foto} alt={`Foto referencial: ${c.titulo}`} className="aspect-[3/2] w-full object-cover" />
+              : <div aria-hidden className="flex aspect-[3/2] w-full items-center justify-center bg-gradient-to-br from-verde-100 to-verde-300 text-5xl">{c.tipo === 'Desayuno' ? '🍳' : c.tipo === 'Almuerzo' ? '🥗' : '🍲'}</div>}
             <div className="flex flex-col gap-2 p-5 pt-1">
               <div className="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-wider"><span className="rounded-full bg-verde-100 px-3 py-1 text-verde-900">{c.tipo}</span>
                 {c.sea && <span className="rounded-full bg-orange-100 px-3 py-1 text-orange-800">Con mariscos</span>}</div>

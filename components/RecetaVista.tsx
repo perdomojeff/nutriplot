@@ -14,7 +14,7 @@ function beep() {
   try { navigator.vibrate?.([200, 100, 200]); } catch {}
 }
 
-export default function RecetaVista({ inicial, foto }: { inicial: Ctx; foto: string }) {
+export default function RecetaVista({ inicial, foto }: { inicial: Ctx; foto?: string }) {
   const [c, setC] = useState<Ctx>(inicial);
   const [chk, setChk] = useState<Record<string, boolean>>({});
   const [tm, setTm] = useState<Record<string, Tm>>({});
@@ -60,9 +60,9 @@ export default function RecetaVista({ inicial, foto }: { inicial: Ctx; foto: str
 
   return (
     <div className="rx" style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-      <section className="hero">
-        <figure className="photo" style={{ margin: 0 }}><img src={foto} alt={`Foto referencial: ${r.title}`} />
-          <figcaption><span>Foto referencial generada con IA</span></figcaption></figure>
+      <section className="hero" style={foto ? undefined : { gridTemplateColumns: '1fr' }}>
+        {foto && <figure className="photo" style={{ margin: 0 }}><img src={foto} alt={`Foto referencial: ${r.title}`} />
+          <figcaption><span>Foto referencial generada con IA</span></figcaption></figure>}
         <div className="col"><div className="tags"><span className="tag">{r.meal}</span><span className="tag">{r.cuisine}</span>{v.sea && <span className="tag sea">Con mariscos</span>}</div>
           <h2>{r.title}</h2><p>{r.sub}</p>
           <div className="times"><div><b className="num">{r.prep} min</b><span>Preparación</span></div><div><b className="num">{r.cook} min</b><span>Cocción</span></div><div><b className="num">{r.total} min</b><span>Total</span></div></div></div>

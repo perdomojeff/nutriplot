@@ -16,7 +16,7 @@ export default async function Page({ params, searchParams }: { params: Promise<{
   return (
     <>
       <Link href="/plan" className="pista underline">← Volver al plan</Link>
-      <RecetaVista inicial={{ id, v, s: Math.min(12, Math.max(1, Number(q.s) || 4)), u: 'met', p, porcion }} foto={`/recetas/${r.img}.jpg`} />
+      <RecetaVista inicial={{ id, v, s: Math.min(12, Math.max(1, Number(q.s) || 4)), u: 'met', p, porcion }} foto={r.img ? `/recetas/${r.img}.jpg` : undefined} />
     </>
   );
 }

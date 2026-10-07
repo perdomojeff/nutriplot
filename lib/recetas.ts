@@ -1,7 +1,8 @@
 // Motor de recetas: escala porciones, convierte unidades y adapta por perfil. Sin estado ni React.
 import * as datos from './recetas-data';
+import { EXTRA } from './recetas-extra';
 
-const RECETAS: any[] = datos.RECETAS as any[];
+const RECETAS: any[] = [...(datos.RECETAS as any[]), ...(EXTRA as any[])];
 const PERFILES: any[] = datos.PERFILES as any[];
 const PROF: any = datos.PROF;
 const PSTEP: any = datos.PSTEP;
@@ -83,9 +84,19 @@ export function pasos(c: Ctx) {
 }
 export const variante = (c: Ctx) => receta(c.id).variants.find((v: any) => v.id === c.v) ?? receta(c.id).variants[0];
 
+// Adaptación genérica para las recetas que no traen una adaptación escrita a mano por perfil.
+const GEN: any = {
+  atleta: { mult: 1.4, add: { kcal: 0, p: 0, c: 0, f: 0 },
+    plate: 'Porción grande (≈ 1½ porciones), con una fuente extra de proteína (huevo, pollo, yogur griego o legumbres) hasta acercarte a 40 g de proteína en la comida.',
+    ad: ['Más proteína en cada comida para conservar músculo mientras bajas grasa.', 'Suma una porción de carbohidrato (arroz, avena, papa, pan integral) en la comida previa o posterior al entrenamiento.', 'Bebe agua con la comida y durante el entrenamiento.'] },
+  mayor: { mult: .8, add: { kcal: 0, p: 0, c: 0, f: 0 },
+    plate: 'Porción un poco más pequeña (≈ ⅘), con la proteína desmenuzada o en trozos pequeños y las verduras bien blandas.',
+    ad: ['Prioriza la proteína en cada comida (25–30 g) para cuidar músculo y fuerza.', 'Carnes, pollo y pescado muy bien cocidos y tiernos; huevos siempre firmes, nunca húmedos.', 'Verduras cocidas hasta que se aplasten con un tenedor y cortadas en trozos pequeños.', 'Bebe líquidos a lo largo del día aunque no sientas sed. Cualquier cambio de plan debe consultarse con su médico o nutricionista.'] },
+};
+
 /** Calorías y macros de UNA porción para esta persona. */
 export function macros(c: Ctx) {
-  const v = variante(c), P = (PROF[c.id] || {})[c.p];
+  const v = variante(c), P = (PROF[c.id] || {})[c.p] ?? GEN[c.p];
   const mult = c.porcion ?? (P ? P.mult : 1), add = P ? P.add : { kcal: 0, p: 0, c: 0, f: 0 };
   return {
     kcal: Math.round(v.kcal * mult + add.kcal), p: Math.round(v.p * mult + add.p),
