@@ -1,7 +1,7 @@
 // @ts-nocheck
 // Recetas adicionales: desayunos
 export const DESAYUNOS=[
-{id:'avena_noche',meal:'Desayuno',cuisine:'Americana saludable',img:null,
+{id:'avena_noche',meal:'Desayuno',cuisine:'Americana saludable',img:'avena_noche',
  title:'Avena remojada con yogur, chía y frutos rojos',
  sub:'Se prepara la noche anterior y por la mañana ya está lista: avena cremosa y fría, con semillas de chía y fruta fresca. Perfecta para días de prisa y para quien tiene poco tiempo en la cocina.',
  prep:10,cook:0,total:10,base:4,
@@ -53,7 +53,7 @@ export const DESAYUNOS=[
  store:'Sin fruta, en frascos tapados y en la nevera, se conserva hasta 3 días. Con fruta fresca encima, consúmela dentro de las siguientes 24 horas. No la congeles.',
  swaps:['Fresas, arándanos y moras → banano en rodajas, durazno o manzana rallada con canela.','Miel o miel de maple → 1 cucharadita de azúcar morena o puré de dátiles.','Yogur griego → requesón o yogur natural espeso (versión con lácteos).','Leche o bebida de soya → bebida de almendra o de avena sin azúcar.']},
 
-{id:'parfait_yogur',meal:'Desayuno',cuisine:'Mediterránea',img:null,
+{id:'parfait_yogur',meal:'Desayuno',cuisine:'Mediterránea',img:'parfait_yogur',
  title:'Parfait de yogur griego con granola casera de nueces y mango',
  sub:'Capas de yogur cremoso, granola de nueces recién horneada, crujiente y apenas dulce, y fruta fresca. Ligero, con buena saciedad y bonito para servir en vasos.',
  prep:10,cook:20,total:30,base:4,
@@ -105,7 +105,7 @@ export const DESAYUNOS=[
  store:'La granola enfriada se guarda en un frasco hermético a temperatura ambiente hasta 7 días. El yogur y la fruta, en la nevera hasta 3 días por separado. El parfait armado conviene comerlo dentro de las 2 horas.',
  swaps:['Nueces → almendras laminadas, pecanas o semillas de girasol (sin frutos secos).','Mango → durazno, piña o papaya en cubos.','Miel → miel de maple.','Yogur griego → yogur de coco o de soya natural sin azúcar (versión sin lácteos).']},
 
-{id:'tortilla_vegetales',meal:'Desayuno',cuisine:'Latina casera',img:null,
+{id:'tortilla_vegetales',meal:'Desayuno',cuisine:'Latina casera',img:'tortilla_vegetales',
  title:'Tortilla de claras y huevos con espinaca, champiñones y queso fresco, con arepa',
  sub:'Una tortilla francesa esponjosa y abundante en verduras, con más proteína que una de solo huevos, acompañada de una arepita pequeña asada en sartén.',
  prep:20,cook:20,total:40,base:4,
@@ -166,7 +166,7 @@ export const DESAYUNOS=[
  store:'La tortilla es mejor recién hecha. Se conserva 1 día en la nevera, recalentada 30 segundos en microondas a potencia media. Las arepitas duran 3 días en la nevera, bien envueltas.',
  swaps:['Queso fresco → requesón o queso mozzarella bajo en grasa.','Espinaca → acelga o kale picados finos.','Arepa → 2 tortillas de maíz pequeñas calentadas.','Champiñones → pimiento o calabacín picados.']},
 
-{id:'tostada_hummus',meal:'Desayuno',cuisine:'Mediterránea',img:null,
+{id:'tostada_hummus',meal:'Desayuno',cuisine:'Mediterránea',img:'tostada_hummus',
  title:'Tostada integral con hummus, huevo poché, tomate y rúcula',
  sub:'Una tostada crujiente con crema de garbanzos, tomate fresco y hojas de rúcula, coronada con un huevo de yema suave. Ligera, rápida y llena de sabor.',
  prep:10,cook:12,total:22,base:4,
@@ -219,7 +219,7 @@ export const DESAYUNOS=[
  store:'Los ingredientes se guardan por separado. El hummus dura 4 días en la nevera. Los huevos pochés se pueden hacer con 1 día de antelación: guárdalos en agua fría y caliéntalos 30 segundos en agua caliente. La tostada armada se come en el momento.',
  swaps:['Hummus → puré de aguacate o requesón.','Rúcula → espinaca baby o berros.','Pan integral → arepa pequeña asada o tortilla de maíz.','Huevo poché → huevo cocido en rodajas.']},
 
-{id:'burrito_frijoles',meal:'Desayuno',cuisine:'Latina / Tex-Mex',img:null,
+{id:'burrito_frijoles',meal:'Desayuno',cuisine:'Latina / Tex-Mex',img:'burrito_frijoles',
  title:'Burrito de desayuno integral de frijoles negros, huevo revuelto y salsa fresca',
  sub:'Una tortilla integral rellena de frijoles negros cremosos, huevo revuelto y salsa fresca de tomate. Se come con la mano y se puede llevar al trabajo.',
  prep:15,cook:12,total:27,base:4,
@@ -286,7 +286,7 @@ export const DESAYUNOS=[
  store:'Los burritos armados se congelan hasta 1 mes envueltos individualmente. Descongela en la nevera y calienta 2 minutos en sartén. La salsa fresca dura 2 días en la nevera.',
  swaps:['Frijoles negros → frijoles rojos o pintos.','Tortilla integral → tortilla de maíz grande o de espinaca.','Pimiento → champiñones o espinaca.','Aguacate → un poco de yogur natural en la versión con huevo.']},
 
-{id:'panqueques_avena',meal:'Desayuno',cuisine:'Americana',img:null,
+{id:'panqueques_avena',meal:'Desayuno',cuisine:'Americana',img:'panqueques_avena',
  title:'Panqueques de avena y banano con fresas y yogur',
  sub:'Panqueques suaves y esponjosos hechos con avena licuada y banano maduro, sin harina refinada ni azúcar añadida, servidos con fresas y yogur.',
  prep:10,cook:15,total:25,base:4,

@@ -2,7 +2,7 @@
 // Recetas adicionales: cenas
 export const CENAS=[
 /* ============================================================ 1. PESCADO / POLLO AL HORNO ============================================================ */
-{id:'pescado_horno',meal:'Cena',cuisine:'Mediterránea',img:null,
+{id:'pescado_horno',meal:'Cena',cuisine:'Mediterránea',img:'pescado_horno',
  title:'Pescado blanco o pollo al horno con limón, tomate cherry y judías verdes, con puré de camote',
  sub:'Una bandeja, sabores frescos de limón, ajo y hierbas, y un puré de camote suave y cremoso. Ligera, fácil de masticar y lista en 50 minutos.',
  prep:20,cook:30,total:50,base:4,
@@ -70,7 +70,7 @@ export const CENAS=[
  swaps:['Judías verdes → espárragos (hornéalos solo 6–8 min), brócoli o calabacín en medias lunas.','Camote → papa amarilla o calabaza butternut en puré.','Limón → naranja agria o lima, para un toque más latino.','Pescado blanco → salmón (suma grasa buena y calorías) o pechuga de pavo.']},
 
 /* ============================================================ 2. CHILI DE PAVO / TRES FRIJOLES ============================================================ */
-{id:'chili_pavo',meal:'Cena',cuisine:'Americana tex-mex',img:null,
+{id:'chili_pavo',meal:'Cena',cuisine:'Americana tex-mex',img:'chili_pavo',
  title:'Chili de frijoles con pavo o vegetariano de tres frijoles, con arroz y aguacate',
  sub:'Un guiso espeso y reconfortante con pimientos, comino y chile suave. Se cocina una sola vez y rinde para el día siguiente.',
  prep:15,cook:55,total:70,base:4,
@@ -146,7 +146,7 @@ export const CENAS=[
  swaps:['Pavo molido → pollo molido o pechuga de pollo desmenuzada.','Arroz → tortilla de maíz tostada o quinoa cocida.','Pasta de tomate → 2 cucharadas de salsa de tomate natural.','Caldo → agua con una pizca extra de sal y comino.']},
 
 /* ============================================================ 3. POLLO AL LIMÓN ROSTIZADO ============================================================ */
-{id:'pollo_limon_rostizado',meal:'Cena',cuisine:'Mediterránea latina',img:null,
+{id:'pollo_limon_rostizado',meal:'Cena',cuisine:'Mediterránea latina',img:'pollo_limon_rostizado',
  title:'Pollo asado al limón y hierbas con verduras rostizadas y papitas',
  sub:'Pollo jugoso con limón, ajo y orégano, acompañado de papitas doradas y verduras de colores. Dos bandejas, sin vigilar mucho.',
  prep:20,cook:40,total:60,base:4,
@@ -210,7 +210,7 @@ export const CENAS=[
  swaps:['Papitas → camote en cubos de 3 cm (hornéalo igual).','Calabacín → ejotes o brócoli (agrégalos en el mismo momento).','Limón → naranja agria para un sabor más latino.','Orégano y tomillo → romero fresco picado fino.']},
 
 /* ============================================================ 4. LOMO SALTADO LIGHT ============================================================ */
-{id:'lomo_saltado_light',meal:'Cena',cuisine:'Peruana',img:null,
+{id:'lomo_saltado_light',meal:'Cena',cuisine:'Peruana',img:'lomo_saltado_light',
  title:'Lomo saltado ligero de res, pollo o camarones con papas al horno y arroz',
  sub:'El clásico peruano, más ligero: papas al horno en vez de fritas, cebolla y tomate crujientes y un fondo de soya y vinagre.',
  prep:25,cook:40,total:65,base:4,
@@ -281,7 +281,7 @@ export const CENAS=[
  swaps:['Papas → camote en bastones (mismo tiempo de horneado).','Arroz blanco → arroz integral (cocina 40 min) o arroz de coliflor.','Vinagre tinto → vinagre de manzana o de arroz.','Ají amarillo → una pizca de pimentón dulce y unas gotas de limón.']},
 
 /* ============================================================ 5. CURRY DE GARBANZOS ============================================================ */
-{id:'curry_garbanzos',meal:'Cena',cuisine:'Asiática',img:null,
+{id:'curry_garbanzos',meal:'Cena',cuisine:'Asiática',img:'curry_garbanzos',
  title:'Curry cremoso de garbanzos y espinaca con leche de coco light, sobre arroz basmati',
  sub:'Un curry suave y aromático con tomate, jengibre y leche de coco. Se cocina en una olla y se come con cuchara.',
  prep:15,cook:35,total:50,base:4,
@@ -352,7 +352,7 @@ export const CENAS=[
  swaps:['Arroz basmati → arroz de coliflor salteado 5 minutos (mismo curry encima).','Espinaca → col rizada (kale) sin tallos, con 3 minutos más de cocción.','Garbanzos → lentejas cocidas o frijoles blancos.','Leche de coco light → 1 taza de yogur griego mezclado con ½ taza de caldo (agrégalo fuera del fuego).']},
 
 /* ============================================================ 6. HAMBURGUESA DE PAVO / FRIJOLES NEGROS ============================================================ */
-{id:'hamburguesa_pavo',meal:'Cena',cuisine:'Americana saludable',img:null,
+{id:'hamburguesa_pavo',meal:'Cena',cuisine:'Americana saludable',img:'hamburguesa_pavo',
  title:'Hamburguesas caseras de pavo y avena (o de frijoles negros) con ensalada grande y camote al horno',
  sub:'Hamburguesas jugosas hechas en casa, sin pan, con una ensalada crujiente y bastones de camote dorados al horno.',
  prep:30,cook:40,total:70,base:4,

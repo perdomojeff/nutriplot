@@ -2,7 +2,7 @@
 // Recetas adicionales: almuerzos
 export const ALMUERZOS=[
 // ───────────────────────────── 1. ENSALADA GRIEGA CON POLLO ─────────────────────────────
-{id:'ensalada_griega_pollo',meal:'Almuerzo',cuisine:'Mediterránea',img:null,
+{id:'ensalada_griega_pollo',meal:'Almuerzo',cuisine:'Mediterránea',img:'ensalada_griega_pollo',
  title:'Ensalada griega con pollo a la plancha y garbanzos crujientes',
  sub:'Pepino, tomate, aceitunas y queso feta con un aderezo de limón y orégano. La proteína va encima: pollo jugoso o una montaña de garbanzos crujientes al horno.',
  prep:25,cook:35,total:60,base:4,
@@ -80,7 +80,7 @@ export const ALMUERZOS=[
  swaps:['Queso feta → queso fresco desmenuzado o 2 cdas. de yogur griego por plato.','Pollo → pavo en filetes o tofu extra firme dorado (sin lácteos).','Lechuga romana → espinaca baby o rúcula.','Vinagre de vino tinto → 1 cda. extra de jugo de limón.']},
 
 // ───────────────────────────── 2. SOPA ESPESA DE LENTEJAS ─────────────────────────────
-{id:'sopa_lentejas',meal:'Almuerzo',cuisine:'Latina casera',img:null,
+{id:'sopa_lentejas',meal:'Almuerzo',cuisine:'Latina casera',img:'sopa_lentejas',
  title:'Sopa espesa de lentejas con zanahoria, espinaca y limón',
  sub:'Una sopa caliente y reconfortante, con las lentejas tiernas y el caldo espeso, que se sirve con un arroz integral pequeño. Un toque de limón al final la despierta.',
  prep:15,cook:55,total:70,base:4,
@@ -150,7 +150,7 @@ export const ALMUERZOS=[
  swaps:['Lentejas pardas → lentejas verdes francesas (tardan unos 5 minutos más).','Arroz integral → quinoa, fideos de trigo integral o una rebanada de pan integral.','Espinaca → acelga o col rizada sin tallo (cocina 5 minutos).','Jamón de pavo → pechuga de pollo desmenuzada ya cocida (agrega 1 taza al final).']},
 
 // ───────────────────────────── 3. TACOS DE POLLO CON REPOLLO ─────────────────────────────
-{id:'tacos_pollo_repollo',meal:'Almuerzo',cuisine:'Latina / mexicana',img:null,
+{id:'tacos_pollo_repollo',meal:'Almuerzo',cuisine:'Latina / mexicana',img:'tacos_pollo_repollo',
  title:'Tacos de pollo con repollo morado y salsa de aguacate',
  sub:'Pollo desmenuzado y jugoso en tortilla de maíz tibia, con un repollo morado crujiente y una salsa cremosa de aguacate y limón. Sale en media hora y se arma en la mesa.',
  prep:20,cook:30,total:50,base:4,
@@ -237,7 +237,7 @@ export const ALMUERZOS=[
  swaps:['Tortilla de maíz → tortilla integral pequeña o hojas de lechuga romana (versión sin tortilla).','Pollo → tofu desmenuzado y sazonado igual, o frijoles negros machacados.','Yogur griego → crema agria ligera o más aguacate con agua.','Repollo morado → repollo verde con una cda. de zanahoria rallada.']},
 
 // ───────────────────────────── 4. POKE BOWL ─────────────────────────────
-{id:'poke_bowl',meal:'Almuerzo',cuisine:'Asiática',img:null,
+{id:'poke_bowl',meal:'Almuerzo',cuisine:'Asiática',img:'poke_bowl',
  title:'Poke bowl con arroz integral, edamame y salsa de soya con jengibre',
  sub:'Un bowl fresco y colorido con arroz integral, edamame, pepino, zanahoria y aguacate, aliñado con una salsa de soya, jengibre y sésamo. Puedes elegir tofu, pollo o pescado fresco.',
  prep:25,cook:45,total:70,base:4,
@@ -317,7 +317,7 @@ export const ALMUERZOS=[
  swaps:['Arroz integral → quinoa o arroz de coliflor (para menos carbohidratos).','Edamame → garbanzos o frijoles negros cocidos.','Sirope de arce → miel (deja de ser vegana).','Aguacate → mango en cubos (más dulce y fresco).']},
 
 // ───────────────────────────── 5. PASTA CON ALBÓNDIGAS ─────────────────────────────
-{id:'pasta_albondigas_pavo',meal:'Almuerzo',cuisine:'Americana-italiana',img:null,
+{id:'pasta_albondigas_pavo',meal:'Almuerzo',cuisine:'Americana-italiana',img:'pasta_albondigas_pavo',
  title:'Pasta integral con albóndigas al horno y salsa de tomate con vegetales ocultos',
  sub:'Albóndigas tiernas horneadas (sin freír) sobre pasta integral, con una salsa casera de tomate a la que le rallamos zanahoria y calabacín: nadie los nota, pero están ahí.',
  prep:25,cook:40,total:65,base:4,
@@ -406,7 +406,7 @@ export const ALMUERZOS=[
  swaps:['Pasta integral → pasta de lentejas o garbanzos (más proteína) o espagueti de calabacín.','Pavo → pollo molido o carne de res magra (cocina a 71 °C / 160 °F).','Avena → pan rallado integral o galletas de soda molidas.','Parmesano → pecorino o levadura nutricional (para quitar el lácteo).']},
 
 // ───────────────────────────── 6. SOPA DE POLLO CON VERDURAS ─────────────────────────────
-{id:'sopa_pollo_verduras',meal:'Almuerzo',cuisine:'Latina casera',img:null,
+{id:'sopa_pollo_verduras',meal:'Almuerzo',cuisine:'Latina casera',img:'sopa_pollo_verduras',
  title:'Sopa de pollo con verduras, papa, maíz y cilantro',
  sub:'El caldo de pollo de toda la vida: dorado, con zanahoria, papa, mazorca y arroz, terminado con cilantro y limón. Reconfortante, saciante y fácil de comer.',
  prep:20,cook:55,total:75,base:4,
