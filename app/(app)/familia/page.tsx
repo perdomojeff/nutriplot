@@ -15,7 +15,9 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ m
     sb.from('usuarios').select('*').eq('familia_id', perfil.familia_id).order('creado_en'),
     sb.from('checkins_semanales').select('usuario_id,semana,peso_kg,pasos_semana').order('semana'),
   ]);
-  const filas = (us ?? []).map((u) => {
+  // Una invitación repetida de alguien que ya entró no se muestra.
+  const yaEntraron = new Set((us ?? []).filter((u) => u.auth_user_id).map((u) => String(u.email_invitacion).toLowerCase()));
+  const filas = (us ?? []).filter((u) => u.auth_user_id || !yaEntraron.has(String(u.email_invitacion).toLowerCase())).map((u) => {
     const c = (cks ?? []).filter((x) => x.usuario_id === u.id), activo = !!u.fecha_inicio;
     const pesos = activo ? pesosReales(u, c) : [], est = activo ? estadoCheckin(u, c) : null;
     return { u, pesos, est, c };
